@@ -2,41 +2,237 @@
 
 /* Global Css variable  */
 
-:root{
-  --clr-primary:#678e3e;
-  --clr-primary-light:#beed8c;
-  --clr-gray-1:#102a42;
-  --clr-gray-5:#617d98;
-  --clr-gray-10:#f1f5f8;
-  --clr-white:#fff;
-  --ff-primary:"Catamaran", sans-serif;
-  --ff-secondary:"Grand Hotel", cursive;
-  --transition:all 0.3s linear;
-  --spacing:0.25rem;
-  --radius:0.5rem;
-
+:root {
+  --clr-primary: #678e3e;
+  --clr-primary-light: #beed8c;
+  --clr-gray-1: #102a42;
+  --clr-gray-5: #617d98;
+  --clr-gray-10: #f1f5f8;
+  --clr-white: #fff;
+  --ff-primary: "Catamaran", sans-serif;
+  --ff-secondary: "Grand Hotel", cursive;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: var(--ff-primary);
   background: var(--clr-white);
   color: var(--clr-gray-1);
   line-height: 1.5;
   font-size: 0.875;
-
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-img{
+img {
   width: 100%;
   display: block;
 }
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+
+    /* font-size: 3rem; */
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.section-title h3 {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary);
+}
+
+/* Btn Css */
+.btn {
+  text-transform: uppercase;
+  background: var(--clr-primary);
+  padding: 0.75rem 1rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-weight: 700;
+  transition: var(--transition);
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  color: var(--clr-white);
+}
+
+.btn:hover {
+  color: var(--clr-primary);
+  background: var(--clr-primary-light);
+}
+
+/* Header Css  */
+
+.header {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/main-bcg.jpeg") center/cover no-repeat fixed;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.banner h2 {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary);
+}
+.banner h1 {
+  text-transform: uppercase;
+  color: var(--clr-white);
+  /* margin: 1.25rem 0 2rem 0; */
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.banner-btn {
+  outline: 0.125rem solid var(--clr-primary);
+  outline-offset: 0.25rem;
+  font-size: 1.25rem;
+  padding: 1rem 1.75rem;
+}
+.content-divider {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left,
+    var(--clr-primary),
+    #e9b949,
+    var(--clr-primary)
+  );
+}
+
+/* End Header Css */
+
+/* Skill Css */
+.skills {
+  background: var(--clr-gray-10);
+}
+.skill {
+  padding: 2.5rem 0;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.skill-icon {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  font-size: 2.5rem;
+  color: var(--clr-primary);
+  transition: var(--transition);
+}
+.skill-text {
+  color: var(--clr-gray-5);
+  max-width: 17rem;
+  margin: 0 auto;
+  /* border: 2px solid black; */
+}
+.skill:hover {
+  background: var(--clr-white);
+  box-shadow: 0 2px var(--clr-primary);
+}
+
+.skill:hover .skill-icon {
+  transform: translateY(-5px);
+}
+
+@media screen and (min-width: 576px) {
+  .skill {
+    float: left;
+    /* display: inline-block; */
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .skill {
+    /* float: left; */
+    /* display: inline-block; */
+    width: 25%;
+  }
+}
+
+.section-title {
+  margin-bottom: 2rem;
+}
+
+.section-center {
+  padding: 4rem 0;
+}
+
+/* End Skill Css */
