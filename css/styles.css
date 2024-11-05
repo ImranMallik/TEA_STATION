@@ -112,20 +112,36 @@ p {
   color: var(--clr-primary);
 }
 
+.section-center {
+  padding: 4rem 0;
+  /* border: 2px solid green; */
+  width: 85vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+    padding: 4rem 1rem;
+  }
+}
+
 /* Btn Css */
 .btn {
   text-transform: uppercase;
   background: var(--clr-primary);
-  padding: 0.75rem 1rem;
+  padding: 0.395rem 0.75rem;
   letter-spacing: var(--spacing);
   display: inline-block;
   font-weight: 700;
   transition: var(--transition);
-  font-size: 1rem;
+  font-size: 0.875rem;
   border: none;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   color: var(--clr-white);
+  border-radius: 2px;
 }
 
 .btn:hover {
@@ -183,6 +199,7 @@ p {
 /* Skill Css */
 .skills {
   background: var(--clr-gray-10);
+  cursor: pointer;
 }
 .skill {
   padding: 2.5rem 0;
@@ -236,3 +253,102 @@ p {
 }
 
 /* End Skill Css */
+
+/* About */
+
+.about-img,
+.about-info {
+  padding: 2rem 0;
+}
+.about-picture-container {
+  background: var(--clr-primary);
+  border: 0.5rem solid var(--clr-primary);
+  max-width: 30rem;
+  overflow: hidden;
+}
+
+.about-image {
+  transition: var(--transition);
+}
+.about-picture-container:hover .about-image {
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+
+.about-text {
+  max-width: 26rem;
+  /* margin: 0 auto; */
+}
+
+@media screen and (min-width: 992px) {
+  .about-img,
+  .about-info {
+    float: left;
+    width: 50%;
+  }
+}
+
+/* Products */
+.products {
+  background: var(--clr-gray-10);
+}
+
+.products article {
+  padding: 2rem 0;
+}
+.product-text {
+  color: var(--clr-gray-5);
+  max-width: 26rem;
+}
+.product-img {
+  border-radius: var(--radius);
+  height: 17rem;
+  margin-bottom: 2rem;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.product-price {
+  color: var(--clr-primary);
+}
+
+.product:hover .product-content {
+  transform: scale(1.1);
+}
+.product-content {
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-title,
+.product-price {
+  transition: color 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 776px) {
+  .product {
+    float: left;
+    width: 50%;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .product {
+    width: 33.33%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .products-info {
+    width: 30%;
+    float: left;
+  }
+  .products-inventory {
+    width: 70%;
+    float: left;
+  }
+  .product {
+    margin-bottom: 0;
+    padding: 0 1rem;
+  }
+}
